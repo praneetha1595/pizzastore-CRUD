@@ -1,0 +1,15 @@
+{ 
+    "httpMethod":"PUT",
+
+    "body":{
+        
+    "menu_id": "fa7f2d6c-36b3-11e7-b729-84ef185f8d6d",
+    "selection": [ "Cheese",
+        "Pepperoni",
+        "Vegetable"
+    ]  
+}
+}
+    
+
+
