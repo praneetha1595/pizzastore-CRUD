@@ -3,7 +3,7 @@ from boto3 import dynamodb
 from boto3.session import Session
 import uuid
 import json
-from datetime import datetime
+import time
 
 dynamodb_session = Session(aws_access_key_id='',
           aws_secret_access_key='',
@@ -96,7 +96,7 @@ def handler(event, context):
             completed=True
         
         if completed==True:
-            presenttime=datetime.now().strftime('%Y-%m-%d@%H:%M:%S')
+            presenttime=time.strftime('%m-%d-%Y@%H:%M:%S')
             res=table.update_item( Key={'order_id':event['order_id'] },ExpressionAttributeNames={"#od": "order" },
                     UpdateExpression= "SET #od.order_time= :val1",
                     ExpressionAttributeValues={':val1':presenttime })
